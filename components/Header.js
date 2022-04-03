@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { MenuIcon, SearchIcon, ShoppingCartIcon } from '@heroicons/react/outline';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 function Header() {
   return (
@@ -32,7 +33,7 @@ function Header() {
 
         {/* Right */}
         <div className="text-white  flex items-center text-xs space-x-6 mx-5 whitespace-nowrap">
-          <div className="cursor-pointer link">
+          <div className="cursor-pointer link" onClick={signIn}>
             <p>Hello Kunaaal</p>
             <p className="font-extrabold md:text-sm">Accounts & Lists</p>
           </div>
